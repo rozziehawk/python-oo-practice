@@ -6,12 +6,12 @@ class WordFinder:
     """Look up a random word in a dictionary read from a file"""
 
     def __init__(self, dictionary_file):
-        print("base class constructor")
+        #print("base class constructor")
         self.dictionary_list = []
         self.num_words = 0;
 
         self.file = open(dictionary_file, "r")
-        print("calling create_dictionary_list")
+        #print("calling create_dictionary_list")
         self.create_dictionary_list()
         
     
@@ -34,7 +34,7 @@ class WordFinder:
         #print("inside ignore_line in base class")
         skip_line = False
         if (len(line) == 0 or line.isspace()):
-            print(f"skipping line (base) --> {line}")
+            #print(f"skipping line (base) --> {line}")
             skip_line = True
         return skip_line
 
@@ -46,6 +46,7 @@ class WordFinder:
 
     def get_random_word(self):
         """look up a random word in our word list"""
-        index = randint(0, self.num_words)
+        index = randint(0, self.num_words - 1)
+        #print(f"Index: {index}")
         return(self.dictionary_list[index])
 
